@@ -1,0 +1,17 @@
+\section{Mordell's Equation}
+
+In this section, we study the Diophantine equation
+\begin{align}
+    y^2 = x^3 + 16
+    \label{Ch1:Eq:Mordell_Eg}
+\end{align}
+We begin by observing that there is a trivial case: when $x = 0$, we can see that $y = \pm 4$.
+
+\subsection{The Case where $x \neq 0$ and $y$ is Odd}
+
+We begin by rewriting~\eqref{Ch1:Eq:Mordell_Eg} and factoring: we have
+\begin{align*}
+    x^3 = y^2 - 16 = \parenth{y + 4}\parenth{y - 4}
+\end{align*}
+It turns out that $\pgcd{y - 4, y + 4} = 1$: one can show that if $y - 4$ and $y + 4$ have a prime divisor, then that prime would have to be $2$, making $y$ even, a contradiction.
+

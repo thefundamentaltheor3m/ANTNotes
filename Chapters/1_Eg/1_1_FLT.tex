@@ -1,11 +1,4 @@
-\chapter{An Introduction to the Theory of Numbers}\label{Ch1:CH}
-\thispagestyle{empty}
-
-One of the main goals of number theory is to solve \textbf{Diophantine Equations}. Diophantine Equations essentially involve solving the following problem: given some $p \in \Z\!\brac{X_1, \ldots, X_n}$, how can one describe the set
-\begin{align*}
-    \setst{\parenth{x_1, \ldots, x_n} \in \Z^n}{\pof{x_1, \ldots, x_n} = 0}
-\end{align*}
-of \textbf{integer} solutions of $p$?
+\section{Fermat's Last Theorem}
 
 A classic example of this is Fermat's Last Theorem, which studies the Diophantine Equation
 \begin{align}
@@ -13,6 +6,8 @@ A classic example of this is Fermat's Last Theorem, which studies the Diophantin
     \label{Ch1:eq:FLT}
 \end{align}
 where $x, y, z \in \Z$ and $n \in \N$. We motivate our study of algebraic number theory by studying the specific case of~\eqref{Ch1:eq:FLT} when $n = 2$.
+
+\subsection{The Pythagorean Case: $n = 2$}
 
 When $n = 2$, finding $x, y, z \in \Z$ such that~\eqref{Ch1:eq:FLT} holds is tantamount to finding Pythagorean triples $x, y, z$. We begin by making a few simplifications of the problem.
 
@@ -39,6 +34,8 @@ We will now apply the fact that $\Z$ is a UFD. Since $x, z > 0$, it is immediate
     y &= \alpha \beta \qquad \parenth{\text{because} y^2 = \alpha^2 \beta^2}
 \end{align*}
 
+\subsection{Generalising this Argument}
+
 A crucial step in the above argument was the so-called \textbf{separating powers trick} for $n = 2$.
 
 \begin{boxlemma}
@@ -53,11 +50,6 @@ The problem is, the factors of $z^p$ no longer lie in $\Z$: rather, they lie in 
 \begin{align*}
     \Z\!\brac{\zeta_p} = \setst{\sum_{i=0}^{p-1}a_i \zeta_p^i}{a_i \in \Z}
 \end{align*}
-One can check that this is, in fact, a subring of $\C$. A very natural question we can ask ourselves is whether this is a UFD. Similarly, we can ask whether the separating powers trick applies in this setting as well.
+One can check that this is, in fact, a subring of $\C$. A very natural question we can ask ourselves is whether this is a UFD. Similarly, we can ask whether the separating powers trick applies in this setting as well. It turns out that it does in the case where $p$ is a \textbf{regular prime}, and we will see exactly what this means later on.
 
-The goal of this module is to study rings "similar" to $\Z\!\brac{\zeta_p}$. We will make this precise in the next section.
-
-% \input{Chapters/1_Intro/1_1_Prop_Formulae.tex}
-% \input{Chapters/1_Intro/1_2_Small_Dim.tex}
-% \input{Chapters/1_Intro/1_3_Solvability.tex}
-% \input{Chapters/1_Intro/1_4_Subalgebras_of_gl.tex}
+The goal of this module is to study rings "similar" to $\Z\!\brac{\zeta_p}$. We will eventually be more precise about what similarities we are interested in.
