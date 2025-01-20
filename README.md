@@ -1,6 +1,6 @@
 # Notes on Algebraic Number Theory
 
-[Notes](https://github.com/thefundamentaltheor3m/LieAlgebrasNotes/blob/main/TeX_Outputs/main.pdf) for MATH70042 (Algebraic Number Theory) taught by Margherita Pagano at Imperial in Spring 2025. They are a work in progress.
+[Notes](https://thefundamentaltheor3m.github.io/ANTNotes/LastLocallyCompiled.pdf) for MATH70042 (Algebraic Number Theory) taught by Margherita Pagano at Imperial in Spring 2025. They are a work in progress.
 
 These notes are primarily based on the content covered in lectures, with some portions based on the lecture notes and other resources (see the bibliography in the notes).
 
