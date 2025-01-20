@@ -1,0 +1,136 @@
+\section{Algebraic Integers}
+
+The primary reference for this section is the lecture notes by George Boxer~\cite[\S 2]{GeorgeBoxer}.
+
+We begin by stating a general result.
+
+\begin{boxproposition}[Gauss's Lemma]
+    Let $g, h \in \Q[X]$ be monic polynomials such that their product $gh$ is in $\Z[X]$. Then, $g$ and $h$ are in $\Z[X]$.
+\end{boxproposition}
+For the proof, see~\cite[Lemma 2.2]{GeorgeBoxer}.
+
+\begin{boxdefinition}[Algebraic Element]
+    A Complex number $\alpha$ is \textbf{algebraic} if it is the root of a polynomial over $\Q$.
+\end{boxdefinition}
+
+Recall an important result.
+
+\begin{boxlemma}\label{Ch1:Lemma:AlgEltEvalIdeal}
+    Given an algebraic element $\alpha \in \C$, the set
+    \begin{align*}
+        I_{\alpha} := \setst{f \in \Qext{X}}{f(\alpha) = 0}
+    \end{align*}
+    is an ideal in $\Qext{X}$.
+\end{boxlemma}
+Indeed, since $\Qext{X}$ is a PID, we can see that $\exists m_{\alpha} \in \Q[X]$ such that $I_{\alpha} = \parenth{m_{\alpha}}$. Furthermore, we will assume, without loss of generality, that $m_{\alpha}$ is monic (we can do this because $\Q$ is a field and we can clear numerators).
+
+\begin{boxdefinition}[Minimal Polynomial]
+    The polynomial $m_{\alpha}$ as defined in \Cref{Ch1:Lemma:AlgEltEvalIdeal} is called the \textbf{minimal polynomial} of $\alpha$.
+\end{boxdefinition}
+
+In this section, we will study a specific class of algebraic elements.
+
+\begin{boxdefinition}[Algebraic Integer]
+    We say that a Complex number is an \textbf{algebraic integer} if it is the root of a monic polynomial over $\Z$.
+\end{boxdefinition}
+
+\subsection{Minimal Polynomials}
+
+\begin{boxproposition}
+    Let $\alpha \in \C$ be an algebraic number. Denote by $m_{\alpha} \in \Q[X]$ its minimal (monic) polynomial over $\Q$. Then, $\alpha$ is an algebraic integer if and only if $m_{\alpha} \in \Z[X]$.
+\end{boxproposition}
+\begin{proof}
+    We only need to prove the forward direction, as the converse is an immediate consequence of the fact that $\Z[X]$ embeds into $\Q[X]$ in a degree-preserving manner.
+
+    Suppose that $\alpha$ is an algebraic integer. Let $f \in \Z[X]$ be monic such that $f(x) = 0$. We know that such an $f$ exists because we are assuming that $\alpha$ is an algebraic integer. Then, by the definition of a minimal polynomial, we have that $\exists g \in \Q[X]$ such that $m_{\alpha} \cdot g = f \in \Z[X]$. Since $f$ and $m_{\alpha}$ are monic, so is $g$. Therefore, by Gauss's Lemma, it must be that $g, m_{\alpha} \in \Z[X]$.
+\end{proof}
+
+\begin{boxexample}
+    For any $\alpha \in \Q$, we have that $\alpha$ is an algebraic integer if and only if $m_{\alpha} \in \Z[X]$. This is equivalent to $m_{\alpha}(X) = X - \alpha$ lying in $\Z[X]$, which is true if and only if $\alpha \in \Z$.
+\end{boxexample}
+
+\subsection{Quadratic Integer Rings}
+
+This material comes from~\cite[\S 2.1]{GeorgeBoxer}.
+
+\begin{boxdefinition}[Quadratic Number]
+    We say that $\alpha \in \C$ is a quadratic number if $m_{\alpha} \in \Z[X]$ has degree  $2$.
+\end{boxdefinition}
+
+Indeed, by Galois Theory, we know that any algebraic integer will lie in a quadratic field.
+
+\begin{boxlemma}
+    If $\alpha \in \C$ is a quadratic number, then there exists some $d \in \Z$ such that
+    \begin{align*}
+        \alpha \in \Qext{\sqrt{d}} = \setst{a + b\sqrt{d}}{a, b \in \Q}
+    \end{align*}
+\end{boxlemma}
+
+We define a trace and a norm on $\Qext{\sqrt{d}}$.
+
+\begin{boxdefinition}[Trace]
+    The \textbf{trace} of a quadratic field is the map
+    \begin{align*}
+        \Tr : \Qext{\sqrt{d}} &\to \Q : a + b\sqrt{d} \mapsto 2a
+    \end{align*}
+\end{boxdefinition}
+
+\begin{boxdefinition}[Norm]
+    The \textbf{norm} of a quadratic field is the map
+    \begin{align*}
+        N : \Qext{\sqrt{d}} &\to \Q : a + b\sqrt{d} \mapsto a^2 - db^2
+    \end{align*}
+\end{boxdefinition}
+
+Indeed, we can show that $\alpha$ is always a root of the polynomial
+\begin{align*}
+    p(x) = x^2 - \Tr(\alpha) x + N(\alpha) \in \Qext{X}
+\end{align*}
+Furthermore, when $\alpha \notin \Q$, we can show that the polynomial $p$ defined above is precisely $m_{\alpha}$.
+
+\begin{boxproposition}
+    Let $\alpha \notin \Q$ be an algebraic number. Then, $\alpha$ is an algebraic integer if and only if $\Tr(\alpha), N(\alpha) \in \Z$.
+\end{boxproposition}
+
+\section{Another Characterisation of the Algebraic Integers}
+
+This material comes from~\cite[\S 2.2]{GeorgeBoxer}.
+
+\begin{boxproposition}
+    The following are equivalent:
+    \begin{enumerate}[label = \normalfont (\alph*)]
+        \item $\alpha \in \C$ is an algebraic integer.
+        \item $\Zext{\alpha}$ is finitely generated \emph{as an abelian group under addition}.
+        \item There exists a non-zero, finitely generated subgroup $M \leq \C$ such that $\alpha \cdot M \subseteq M$.
+    \end{enumerate}
+\end{boxproposition}
+\begin{proof}\hfill
+    \begin{description}
+        \item[\underline{(a) $\implies$ (b).}] Suppose that $\alpha \in \C$ is an algebraic integer. Then, $\exists m_{\alpha} \in \Z[X]$ such that $m_{\alpha}(\alpha) = 0$. Write
+        \begin{align*}
+            m_{\alpha}(X) = X^n + a_{n-1}X^{n-1} + \cdots + a_1X + a_0
+        \end{align*}
+        We can show that the set
+        \begin{align*}
+            \set{1, \alpha, \alpha^2, \ldots, \alpha^{n-1}}
+        \end{align*}
+        generate $\Zext{\alpha}$ as an abelian group under addition.
+
+        It is easily seen that the set of \textit{all} powers of $\alpha$ is a generating set for $\Zext{\alpha}$---indeed, this is by definition of $\Zext{\alpha}$. We need to show that for all $k \geq n$, $\alpha^{k}$ can be expressed as a $\Z$-linear combination of $\set{1, \alpha, \ldots, \alpha^{n-1}}$. We show this by induction on $k$.
+
+        The base case $k = n$ is clear: this follows from the fact that $\alpha$ is a root of $m_{\alpha}$. Now, suppose that for some $k \geq n$, we can write $\alpha^{k}$ as a $\Z$-linear combination of $\set{1, \alpha, \ldots, \alpha^{n-1}}$ with coefficients $c_i$. Then, we have that
+        \begin{align*}
+            \alpha^{k+1} = \alpha \cdot \alpha^{k} = \alpha \cdot \sum_{i=0}^{n-1} c_i \alpha^{i} = \sum_{i=0}^{n-1} c_i \alpha^{i+1}
+        \end{align*}
+        This is a linear combination of $\set{\alpha, \ldots, \alpha^{n}}$ with coefficients $c_i$, and by the base case, we know that $\alpha^n$ is a linear combination of $\set{1, \ldots, \alpha^{n-1}}$. Therefore, $\alpha^{k+1}$ is a linear combination of $\set{1, \ldots, \alpha^{n-1}}$.
+
+        \item[\underline{(b) $\implies$ (c).}] Suppose that $\Zext{\alpha}$ is finitely generated as an abelian group under addition. Then, there exists a finite set $\set{v_1, \ldots, v_n}$ such that every element of $\Zext{\alpha}$ can be written as a $\Z$-linear combination of the $v_i$. Let $M$ be the subgroup of $\C$ generated by the $v_i$. Then, $\alpha \cdot M \subseteq M$.
+        
+        \item[\underline{(c) $\implies$ (a).}] Suppose that there exists a non-zero, finitely generated subgroup $M \leq \C$ such that $\alpha \cdot M \subseteq M$. Denote its generators by $m_1, \ldots, m_n$ for some $n \in \N$. Then, we know there exist $a_{ij} \in \Z$ such that for all $1 \leq i \leq n$,
+        \begin{align*}
+            \alpha \cdot m_i = \sum_{j=1}^{n} a_{ij} m_j
+        \end{align*}
+        Define $A = \parenth{a_{ij}}_{1 \leq i, j \leq n}$. Clearly, $A \in \mat{n}{n}{\Z}$.
+    \end{description}
+    
+\end{proof}
