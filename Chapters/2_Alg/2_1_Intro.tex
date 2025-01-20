@@ -75,3 +75,56 @@ We have an important relationship between PIDs and UFDs.
     Every PID is a UFD.
 \end{boxtheorem}
 
+For the proof of this result, see \cite[Theorem 1.2]{AmbrusPal}.
+
+\subsection{Euclidean Domains}
+
+Euclidean Domains are essentially Integral Domains in which we can perform long division using the Euclidean Algortihm.
+
+\begin{boxdefinition}[Euclidean Domain]
+    \sorry % What's the point, we know this stuff
+\end{boxdefinition}
+
+There are many examples of Euclidean Domains.
+
+\begin{boxexample}[Polynomial Rings over Fields]
+    Let $k$ be a field. Then, the polynomial ring $k[X]$ is a Euclidean Domain with size function $2^{\deg}$ (or $n^{\deg}$ for any $n \in \N_{>1}$).
+\end{boxexample}
+
+We have an important relationship between Euclidean Domains and PIDs (and, by extension, UFDs).
+
+\begin{boxproposition}
+    Every Euclidean Domain is a PID.
+\end{boxproposition}
+
+We again skip the proof and refer the reader to \cite{}
+
+\subsection{Integrally Closed Rings}
+
+In this subsection, we will assume nothing about $R$ beyond that it is an integral domain. We denote its field of fractions by $K = \Frac{R}$.
+
+\begin{boxdefinition}[Integrally Closed]
+    $R$ is \textbf{integrally closed} if for every monic polynomial $f \in R[X]$ and every $\frac{a}{b} \in K$, we have the implication
+    \begin{align*}
+        \fof{\frac{a}{b}} = 0 \implies \frac{a}{b} \in K
+    \end{align*}
+\end{boxdefinition}
+
+It turns out there is a simple criterion for being integrally closed.
+
+\begin{boxproposition}
+    If $R$ is a UFD, then $R$ is integrally closed.
+\end{boxproposition}
+\begin{proof}
+    Let $f \in R[X]$ be a monic polynomial. Write
+    \begin{align*}
+        \fof{X} = X^n + a_{n-1} X^{n-1} + \cdots + a_0
+    \end{align*}
+    Fix some $\frac{\alpha}{\beta} \in K$. Assume that $\fof{\frac{\alpha}{\beta}} = 0$. We can assume, without loss of generality, that $\alpha$ and $\beta$ have no common factors that are not units: if they do, then we can write out both of their \textit{unique} factorisations into irreducibles and perform the necessary cancellations in $K$ to reduce $\frac{\alpha}{\beta}$ to a fraction whose numerator and denominator have no common factors.
+
+    We have that
+    \begin{align*}
+        \frac{\alpha^n}{\beta^n} &= -\parenth{a_{n-1}\frac{\alpha^{n-1}}{\beta^{n-1}} + \cdots + a_0} \\
+        \implies \alpha^n &= -\beta\parenth{a_{n-1}\alpha^{n-1} + \cdots + a_0 \beta^{n-1}}
+    \end{align*}
+\end{proof}
