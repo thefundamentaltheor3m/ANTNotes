@@ -33,7 +33,19 @@ In the case of $\Z$, the Euclidean norm acts as a \textbf{size function} that we
     The \textbf{Gaussian Integers} are the subring $\Zext{i}$ of $\C$, where $i = \sqrt{-1}$ is the imaginary constant.
 \end{boxdefinition}
 
+The Gaussian Integers are normed.
 
+\begin{boxproposition}
+    The function $N : \Zext{i} \to \R : a + bi \mapsto a^2 + b^2$ is a norm on $\Zext{i}$.
+\end{boxproposition}
+
+In fact, we can go a step further.
+
+\begin{boxtheorem}\label{Ch1:Thm:GaussianIntegersEuclidean}
+    Under the restriction of the above function $N$ to the set $\Zext{i} \setminus \set{0}$, the Gaussian Integers form a Euclidean Domain.
+\end{boxtheorem}
+
+The proof depends strongly on a geometric result that states that for any point in $\C$, there exists a point on $\Zext{i}$ that is at a distance of most $\frac{\sqrt{2}}{2}$ from it (cf. \cite[Proposition 2.4]{AmbrusPal}). For the proof of \Cref{Ch1:Thm:GaussianIntegersEuclidean}, see \cite[Theorem 2.3]{AmbrusPal}.
 
 \subsection{The Rings $\Zext{i\sqrt{k}}$}
 

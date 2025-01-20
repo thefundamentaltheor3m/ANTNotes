@@ -82,7 +82,11 @@ For the proof of this result, see \cite[Theorem 1.2]{AmbrusPal}.
 Euclidean Domains are essentially Integral Domains in which we can perform long division using the Euclidean Algortihm.
 
 \begin{boxdefinition}[Euclidean Domain]
-    \sorry % What's the point, we know this stuff
+    We say that an integral domain $R$ is a \textbf{Euclidean Domain} if there exists a function $N : R \setminus \set{0} \to \N \setminus \set{0}$ such that for all $a, b \in R \setminus \set{0}$,
+    \begin{enumerate}
+        \item $N(a) \leq N(ab)$.
+        \item There exist $q, r \in R$ such that $a = qb + r$ with either $r = 0$ or $N(r) < N(b)$.
+    \end{enumerate}
 \end{boxdefinition}
 
 There are many examples of Euclidean Domains.
