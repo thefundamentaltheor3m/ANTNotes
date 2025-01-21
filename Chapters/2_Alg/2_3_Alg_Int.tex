@@ -92,11 +92,17 @@ Furthermore, when $\alpha \notin \Q$, we can show that the polynomial $p$ define
     Let $\alpha \notin \Q$ be an algebraic number. Then, $\alpha$ is an algebraic integer if and only if $\Tr(\alpha), N(\alpha) \in \Z$.
 \end{boxproposition}
 
-\section{Another Characterisation of the Algebraic Integers}
+\subsection{Another Characterisation of the Algebraic Integers}
 
 This material comes from~\cite[\S 2.2]{GeorgeBoxer}.
 
-\begin{boxproposition}
+% Before we begin, we need an important result on finitely generated abelian groups.
+
+% \begin{boxproposition}
+    
+% \end{boxproposition}
+
+\begin{boxproposition}\label{Ch2:Prop:CharacterisationofAlgInt}
     The following are equivalent:
     \begin{enumerate}[label = \normalfont (\alph*)]
         \item $\alpha \in \C$ is an algebraic integer.
@@ -130,8 +136,64 @@ This material comes from~\cite[\S 2.2]{GeorgeBoxer}.
         \begin{align*}
             \alpha \cdot m_i = \sum_{j=1}^{n} a_{ij} m_j
         \end{align*}
-        Define $A = \parenth{a_{ij}}_{1 \leq i, j \leq n}$. Clearly, $A \in \mat{n}{n}{\Z}$.
+        Define $A = \parenth{a_{ij}}_{1 \leq i, j \leq n}$. Clearly, $A \in \mat{n}{n}{\Z}$. We can view $A$ as being the matrix of the linear map corresponding to the action of $\alpha$ on the generators $m_i$ of $M$. More formally, we have the following surjective homomorphism of abelian groups
+        \begin{align*}
+            p :
+            \Z^n \to M :
+            \parenth{a_1, \ldots, a_n} \mapsto \sum_{i=1}^{n} a_i m_i
+        \end{align*}
+        Indeed, for any $f \in \Z[X]$ and $b = \parenth{b_1, \ldots, b_n} \in \Z^n$
+
         \sorry
     \end{description}
     
+\end{proof}
+
+\subsection{Algebraic Properties of Algebraic Integers}
+
+This material comes from~\cite[Theorem 3.1]{GeorgeBoxer}.
+
+\begin{boxproposition}[Ring Properties]
+    The algebraic integers are closed under complex addition, subtraction and multiplication. In particular, they form a subring of $\C$.
+\end{boxproposition}
+\begin{proof}
+    Let $\alpha, \beta$ be algebraic integers. Consider the ring
+    \begin{align*}
+        \Zext{\alpha, \beta} =
+        \setst{\sum_{i, j} a_{ij} \alpha^i \beta^j}{a_{ij} \in \Z}
+    \end{align*}
+    This subring of $\C$ is generated (\emph{as an abelian group}) by
+    \begin{align*}
+        \setst{\alpha^i \beta^j}{i, j \geq 0}
+    \end{align*}
+    If $\alpha$ satisfies a monic polynomial with intger coefficients of degree $n$ and $\beta$ satisfies a monic polynomial with integer coefficients of degree $m$, then
+    \begin{align*}
+        \setst{\alpha^i \beta^j}{0 \leq i \leq n, 0 \leq j \leq m}
+    \end{align*}
+    generates $\Zext{\alpha, \beta}$ by an argument similar to the proof of \Cref{Ch2:Prop:CharacterisationofAlgInt} (\sorry).
+
+    Now, for any $\gamma \in \Zext{\alpha, \beta}$, we have that
+    \begin{align*}
+        \gamma \cdot \Zext{\alpha, \beta} \subseteq \Zext{\alpha, \beta}
+    \end{align*}
+    By \Cref{Ch2:Prop:CharacterisationofAlgInt}(c), $\gamma$ has to be an algebraic integer. In particular, this holds for $\gamma = \alpha + \beta$, $\alpha - \beta$ and $\alpha \cdot \beta$.
+\end{proof}
+
+\begin{boxproposition}[Polynomial Property]
+    If $f = X^n + a_{n-1}X^{n-1} + \cdots + a_0 \in \C[X]$ is a monic polynomial whose coefficients $a_{0}, \ldots, a_{n-1}$ are algebraic integers, then the roots of $f$ are algebraic integers as well.
+\end{boxproposition}
+\begin{proof}
+    Fix such a polynomial $f$. Consider $\alpha \in \C$ such that
+    \begin{align*}
+        f(\alpha) = \alpha^n + a_{n-1} \alpha^{n-1} + \cdots + a_0 = 0
+    \end{align*}
+    Consider the subring
+    \begin{align*}
+        \Zext{a_0, \ldots, a_{n-1}, \alpha} \subseteq \C
+    \end{align*}
+    If each $a_i$ satisfies a minimal polynomial of degree $m_i$ with integer coefficients, then the set
+    \begin{align*}
+        \setst{a_0^{i_0} a_1^{i_1} \cdots a_{n-1}^{i_{n-1}}\alpha_k}{0 \leq i_j \leq m_j, 0 \leq k \leq n}
+    \end{align*}
+    generates $\Zext{a_0, \ldots, a_{n-1}, \alpha}$ as an abelian group. Since $\alpha$ lies in this subring, by \Cref{Ch2:Prop:CharacterisationofAlgInt}, we can conclude that $\alpha$ is an algebraic integer.
 \end{proof}

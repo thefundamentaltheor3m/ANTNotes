@@ -1,0 +1,54 @@
+\section{Number Fields}
+
+\subsection{A Word on Field Extensions}
+
+\begin{boxdefinition}[Finite Field Extension]
+    We say a field extension $k \subseteq K$ is \textbf{finite} if the dimension of $K$ as a $k$-vector space is finite.
+\end{boxdefinition}
+
+\begin{boxdefinition}[Degree of a Field Extension]
+    The dimension of an extension $K$ of a field $k$ as a $k$-vector space is called the \textbf{degree} of the field extension $K/k$, and is denoted $\brac{K : k}$.
+\end{boxdefinition}
+
+\subsection{Extensions of the Rational Numbers}
+
+\begin{boxdefinition}[Number Field]
+    A \textbf{number field} is a finite extension of the field of rational numbers $\Q$.
+\end{boxdefinition}
+
+The following is a well-known fact from Galois Theory that we will not prove in this module.
+
+\begin{boxtheorem}[Primitive Element Theorem]\label{Ch2:Thm:Finite_Extensions_of_Q}
+    Every finite extension of $\Q$ is of the form $\Q(\alpha)$ for some algebraic number $\alpha$.
+    % Crazy!
+\end{boxtheorem}
+
+\subsection{Rings of Integers}
+
+Throughout this subsection, let $k$ be a number field.
+
+\begin{boxdefinition}[Ring of Integers]
+    The \textbf{ring of integers} of a number field $k$ is the set of all algebraic integers contained in $k$.
+\end{boxdefinition}
+
+Note that by \Cref{Ch2:Thm:Finite_Extensions_of_Q}, this is a sensible definition: the algebraic integers live in $\C$, as does $\Q(\alpha)$ for any algebraic number $\alpha$, because $\alpha$ is a Complex root of a polynomial with rational coefficients.
+
+\begin{boxproposition}
+    $\Frac{\O_k} = k$.
+\end{boxproposition}
+\begin{proof}
+    Note that the inclusion $\Frac{\O_k} \subseteq k$ is trivial, since $\O_k \subseteq k$ by definition. For the opposite inclusion, it is enough to show that $\forall \alpha \in k$, $\exists \lambda \in \Z$ such that $\lambda \cdot \alpha \in \O_k$. Indeed, this would imply that $\alpha = \frac{\lambda \alpha}{\lambda} \in \Frac{\O_k}$.
+
+    Fix $\alpha \in k$. Since $k$ is a finite extension of $\Q$, there exists a polynomial $f \in \Q[X]$ such that $f(\alpha) = 0$. Let $f = \sum_{i=0}^n a_i X^i$. Then, $a_n \alpha^n + \cdots + a_0 = 0$. Define $\lambda$ to be the least common multiple of the denominators of $a_1, \ldots, a_n$. Then, \sorry
+\end{proof}
+
+\begin{boxproposition}
+    $\O_k$ is integrally closed.
+\end{boxproposition}
+\begin{proof}
+    We essentially need to show that for all monic polynomials $f \in \O_k[X]$ and $x \in \Frac{\O_k} = k$, if $f(\alpha) = 0$ then $\alpha \in \O_k$.
+
+    But this follows quite naturally from \sorry
+\end{proof}
+
+
