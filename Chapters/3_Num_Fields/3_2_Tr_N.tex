@@ -1,3 +1,39 @@
 \section{Traces and Norms}
 
+Fix a number field $k$. In this section, we will study the maps $\Tr_k$ and $N_k$ from $k$ to $\Q$ defined similarly to the way they are defined for quadratic fields.
+
+\subsection{Definitions}
+
+The idea is to exploit the ring (field) structure on $k$ to view any element $\alpha \in k$ as a $\Q$-linear operator on the $\Q$-vector space $k$ by left multiplication. This way, we can define the trace and norm of $\alpha$ as the trace and determinant of this operator.
+
+\begin{boxdefinition}[Trace]
+    The \textbf{trace} of an element $\alpha \in k$ is the trace of the $\Q$-linear operator $L_\alpha : k \to k$ defined by $L_\alpha(x) = \alpha x$.
+\end{boxdefinition}
+
+\begin{boxdefinition}[Norm]
+    The \textbf{norm} of an element $\alpha \in k$ is the determinant of the $\Q$-linear operator $L_\alpha : k \to k$ defined by $L_\alpha(x) = \alpha x$.
+\end{boxdefinition}
+
+We give an example below to illustrate these definitions~\cite[Example 3.8]{GeorgeBoxer}.
+
+\begin{boxexample}
+    Let $k = \Qext{\sqrt[3]{2}}$. Let's compute $\Trkof{\sqrt[3]{2}}$. We begin by computing the matrix of the operator $L_{\sqrt[3]{2}}$ with respect to the $\Q$-basis $\set{1, \sqrt[3]{2}, \sqrt[3]{4}}$ of $k$. We have
+    \begin{align*}
+        L_{\sqrt[3]{2}}(1) &= \sqrt[3]{2} \cdot 1 = \sqrt[3]{2}, \\
+        L_{\sqrt[3]{2}}\!\parenth{\sqrt[3]{2}} &= \sqrt[3]{2} \cdot \sqrt[3]{2} = 2, \\
+        L_{\sqrt[3]{2}}\parenth{\sqrt[3]{4}} &= \sqrt[3]{2} \cdot \sqrt[3]{4} = 2\sqrt[3]{2}.
+    \end{align*}
+    Therefore, the matrix of $L_{\sqrt[3]{2}}$ is
+    \begin{equation*}
+        \begin{bmatrix}
+            0 & 0 & 2 \\
+            1 & 0 & 0 \\
+            0 & 1 & 0
+        \end{bmatrix}.
+    \end{equation*}
+    The trace of this matrix is $0$, so $\Trkof{\sqrt[3]{2}} = 0$. Similarly, the determinant of this matrix is $2$, so $N_k(\sqrt[3]{2}) = 2$.
+\end{boxexample}
+
+\subsection{Properties}
+
 
